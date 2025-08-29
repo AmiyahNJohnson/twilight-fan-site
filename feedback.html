@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Twilight Saga Fan Site - Feedback</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+/* Hides the Resubmit button initially */
+#resubmit-button {
+display: none;
+}
+</style>
+<script>
+// Function to handle form submission and show the Resubmit button
+function handleFormSubmit(event) {
+event.preventDefault(); // Prevent the form from submitting immediately
+
+// Hide the Submit button
+document.getElementById('submit-button').style.display = 'none';
+
+// Show the Resubmit button
+document.getElementById('resubmit-button').style.display = 'inline-block';
+
+// Optionally, alert user about submission (could also replace with a success message)
+alert('Your feedback has been submitted! You can resubmit if needed.');
+}
+</script>
+</head>
+<body>
+<header>
+<h1>Feedback Form</h1>
+</header>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="characters.html">Characters</a>
+<a href="gallery.html">Gallery</a>
+<a href="feedback.html">Feedback</a>
+<a href="twilight-trailer.html">Watch Twilight Trailer</a>
+</nav>
+
+<div class="container">
+<form onsubmit="handleFormSubmit(event)">
+<label for="favorite-movie">Favorite Twilight Movie:</label>
+<select id="favorite-movie" name="favorite-movie" required>
+<option value="">-- Select --</option>
+<option value="twilight">Twilight</option>
+<option value="new-moon">New Moon</option>
+<option value="eclipse">Eclipse</option>
+<option value="breaking-dawn-1">Breaking Dawn Part 1</option>
+<option value="breaking-dawn-2">Breaking Dawn Part 2</option>
+</select>
+
+<fieldset>
+<legend>Which team do you belong to?</legend>
+<label><input type="radio" name="team" value="team-edward" required> Team Edward</label><br />
+<label><input type="radio" name="team" value="team-jacob"> Team Jacob</label><br />
+<label><input type="radio" name="team" value="team-bella"> Team Bella</label><br />
+</fieldset>
+
+<label for="comments">Your Comments:</label>
+<textarea id="comments" name="comments" placeholder="Write something..."></textarea>
+
+<!-- Submit button -->
+<input type="submit" id="submit-button" value="Submit" />
+
+<!-- Reset button -->
+<input type="reset" value="Reset" />
+
+<!-- Resubmit button (initially hidden) -->
+<input type="submit" id="resubmit-button" value="Resubmit" />
+</form>
+</div>
+</body>
+</html>
